@@ -11,3 +11,6 @@
       *Training the model
       *Loading Trained Model From Checkpoint
       *Detecting in Real-Time
+
+2.CodeToCaptureImagesWithCamera
+    This code enables us to capture images which is used to train the model in recognizing the sign in real time.
