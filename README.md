@@ -69,9 +69,10 @@ Label map is a representation of all the different objects that we got within th
 
 Dependencies dor training model:
 
-   label_map_util and visualization_utils from object_detection.utils
-   model_builder from object_detection.builders
-   
-Successful model building enables us to make real-time detection.
+label_map_util and visualization_utils from object_detection.utils
 
-**Not just Sign detection we can even work on different posture detection in a similar way.
+model_builder from object_detection.builders
+   
+Successful model building enables us to make real-time detections.
+
+**Not just Sign detection we can even work on different posture detection in a similar way.**
