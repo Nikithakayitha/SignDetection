@@ -1,26 +1,22 @@
-# SIGN-LANGUAGE-DETECTOR:
+# SIGN-LANGUAGE-DETECTION:
 
 ## Code.ipynb
 
-   ### Code for sign detection which involves:
+   ### Sign detection code consists of:
    
-   *Setting Paths
+   *Set up Paths
     
-   *Creating Label Map
+   *Label Map
     
-   *Creating tensorflow records
+   *Tensorflow records
    
-   *Downloading TF Models
+   *TF Models
    
-   *Copying Model Configuration to Training Folder
+   *Transfer Learning Configuration
    
-   *Updating Configuration For Transfer Learning
+   *Model training
    
-   *Training the model
-   
-   *Loading Trained Model From Checkpoint
-   
-   *Detecting in Real-Time
+   *Detection in Real-Time
 
 ## Worked on:
 
@@ -34,14 +30,17 @@
         
    Key dependencies to capture images:
    
-   #### OpenCV
+   #### OpenCV: 
+   Enables the image and video processing to identify objects, faces, or even handwriting of an human.
    
-   #### OS: helps us work with file paths
+   #### OS: 
+   helps us work with file paths
    
-   #### Time: gives a time break in between each of the images that we collect
-   (enabling to move our hands in oredr to collect different angles for the sign language model)
+   #### Time: 
+   gives a time break in between each of the images that we collect(enables to collect different angles)
    
-   #### uuid: helps in naming image files
+   #### uuid: 
+   helps in naming image files
 
 Create a folder to save the images captured using the IMAGES_PATH. Next thing is to create labels that we are going to collect and specifying the number of images required. Later on, create a directory for labels, and start collecting images using the video capture. Finally, on collecting images, we have to get all the images to a single folder in order to label them with no duplications.
          
