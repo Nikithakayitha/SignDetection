@@ -1,18 +1,28 @@
-**SIGN-LANGUAGE-DETECTOR:**
+# SIGN-LANGUAGE-DETECTOR:
 
-Code.ipynb
-    Complete coding part for sign detection which involves:
-      *Setting Paths
-      *Creating Label Map
-      *Creating tensorflow records
-      *Downloading TF Models
-      *Copying Model Configuration to Training Folder
-      *Updating Configuration For Transfer Learning
-      *Training the model
-      *Loading Trained Model From Checkpoint
-      *Detecting in Real-Time
+## Code.ipynb
 
-**AIM:**
+   ### Code for sign detection which involves:
+   
+   *Setting Paths
+    
+   *Creating Label Map
+    
+   *Creating tensorflow records
+   
+   *Downloading TF Models
+   
+   *Copying Model Configuration to Training Folder
+   
+   *Updating Configuration For Transfer Learning
+   
+   *Training the model
+   
+   *Loading Trained Model From Checkpoint
+   
+   *Detecting in Real-Time
+
+## Worked on:
 
 1.Labelling images for Object detection
 
@@ -20,30 +30,48 @@ Code.ipynb
 
 3.Detecting Sign language in Real time
 
-1. **Labelling images for Object detection**
-
-Collect images using python and opencv, then label them with Lable image package
-
-Steps:
-**1. Prepare image labels using labelImg:** 
+### Collecting images:
         
    Key dependencies to capture images:
-    *OpenCV
-    *OS: helps us work with file paths
-    *Time: gives a time break in between each of the images that we collect
-           (enabling to move our hands in oredr to collect different angles for the sign language model)
-    *uuid: helps in naming image files
-         
-   Downloads required:
-    *LabelImg(python package helps in labelling images for sign detection)
-        Dependencies for LabelImg:
-        *Install PyQt5- conda install pyqt5
-        *Install lxml- conda install -c anaconda lxml
-        setting up binaries- pyrcc5 -o resources.py resources.qrc
-        command to run LabelImg(in cmd)- python labelling.py
-    
- **2. Transfer learning using SSDMobileNet:**
- **3. Real time detection using a webcam and OpenCV:**
+   
+   #### OpenCV
+   
+   #### OS: helps us work with file paths
+   
+   #### Time: gives a time break in between each of the images that we collect
+   (enabling to move our hands in oredr to collect different angles for the sign language model)
+   
+   #### uuid: helps in naming image files
 
-2.CodeToCaptureImagesWithCamera
-    This code enables us to capture images which is used to train the model in recognizing the sign in real time.
+Create a folder to save the images captured using the IMAGES_PATH. Next thing is to create labels that we are going to collect and specifying the number of images required. Later on, create a directory for labels, and start collecting images using the video capture. Finally, on collecting images, we have to get all the images to a single folder in order to label them with no duplications.
+         
+### Setup LabelImg(python package helps in labelling images for sign detection)
+        
+   Dependencies for LabelImg:
+        
+   **Install PyQt5** conda install pyqt5
+        
+   **Install lxml** conda install -c anaconda lxml
+    
+These commands enables label image work properly:
+
+   **setting up binaries** pyrcc5 -o resources.py resources.qrc
+   
+   
+### Label Image and create Labelmap
+
+**command to run LabelImg** python labelling.py
+Specifically, we need to label each one of sign language poses. To do that, we have to use the labelling tool to draw square around the pose and type in the name of the label. Now on labelling data, we have to split them up into a training and testing partitions, which allows our model to train on a certain set of data, and test and evaluate on a seperate partition.
+
+Label map is a representation of all the different objects that we got within the model. After creating the labelmap, we have to go with tf records, which is a special file format the tensorflow object detection api likes to be trained.
+
+### Training model and detection
+
+Dependencies dor training model:
+
+   label_map_util and visualization_utils from object_detection.utils
+   model_builder from object_detection.builders
+   
+Successful model building enables us to make real-time detection.
+
+**Not just Sign detection we can even work on different posture detection in a similar way.
